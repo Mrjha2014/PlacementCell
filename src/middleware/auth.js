@@ -2,7 +2,10 @@
 const ensureAuthenticated = (req, res, next) => {
   // Check if the user is authenticated
   if (req.isAuthenticated()) {
+    // Set local variable for authenticated user, or null if not authenticated
+    res.locals.user = req.user || null;
     // If authenticated, proceed to the next middleware or route handler
+
     return next();
   }
 

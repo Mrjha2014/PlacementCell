@@ -1,4 +1,3 @@
-
 # Placement Cell Management System
 
 ## Overview
@@ -34,7 +33,7 @@ npm install
 Create a `.env` file in the root directory of the project and add the following environment variables:
 
 SESSION_SECRET=your_session_secret
-MONGODB_URI=your_mongodb_connection_string
+DB_URI=your_mongodb_connection_string
 
 Replace `your_session_secret` with a secret key for session management and `your_mongodb_connection_string` with your MongoDB connection string.
 
