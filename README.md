@@ -20,7 +20,7 @@ Follow these steps to set up the project locally:
 
 Clone the project repository from GitHub:
 
-git clone `<repository-url>`
+git clone https://github.com/Mrjha2014/PlacementCell.git
 cd placementcell
 
 ### 2. Install Dependencies
