@@ -1,0 +1,55 @@
+<div class="row">
+    <div class="col">
+        <div class="row">
+            <div class="col-8">
+                <h2>Students List</h2>
+
+            </div>
+            <div class="col-4"> <a href="/students/add" class="btn btn-success m-3">Add New Student</a><a
+                    href="/csv/download-csv" class="btn btn-info m-3">Download Reports</a>
+            </div>
+        </div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>College</th>
+                    <th>Batch</th>
+                    <th>Status</th>
+                    <th>DSA Score</th>
+                    <th>WebD Score</th>
+                    <th>React Score</th>
+                    <!-- Add other fields as necessary -->
+                </tr>
+            </thead>
+            <tbody>
+                <% students.forEach(student=> { %>
+                    <tr>
+                        <td>
+                            <%= student.name %>
+                        </td>
+                        <td>
+                            <%= student.college %>
+                        </td>
+                        <td>
+                            <%= student.batch %>
+                        </td>
+                        <td>
+                            <%= student.status %>
+                        </td>
+                        <td>
+                            <%= student.dsaScore %>
+                        </td>
+                        <td>
+                            <%= student.webDScore %>
+                        </td>
+                        <td>
+                            <%= student.reactScore %>
+                        </td>
+                        <!-- Add other fields as necessary -->
+                    </tr>
+                    <% }) %>
+            </tbody>
+        </table>
+    </div>
+</div>

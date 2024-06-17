@@ -1,0 +1,14 @@
+.bootstrap-select .dropdown-toggle::after {
+  content: none;
+}
+
+.bootstrap-select .dropdown-toggle {
+  border-radius: 20px;
+  padding: 5px 12px;
+}
+
+.bootstrap-select .filter-option-inner-inner {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

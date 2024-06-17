@@ -1,0 +1,28 @@
+<div class="row">
+    <div class="col">
+        <h2>External Jobs</h2>
+        <% jobs.forEach(job=> { %>
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        <%= job.title %>
+                    </h5>
+
+                    <p class="card-text">
+                        <%= job.company.display_name %>
+                    </p>
+                    <p class="card-text">
+                        <%= job.description %>
+                    </p>
+                    <p class="card-text">
+                        <%= job.location.display_name %>
+                    </p>
+                    <p class="card-text">Max salary: <%= job.salary_max %>
+                    </p>
+
+                    <a href="<%= job.url %>" class="btn btn-primary" target="_blank">Apply</a>
+                </div>
+            </div>
+            <% }) %>
+    </div>
+</div>

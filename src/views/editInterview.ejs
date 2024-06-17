@@ -1,0 +1,59 @@
+<div class="row">
+    <div class="col-md-6 offset-md-3">
+        <h2>Edit Interview</h2>
+        <form action="/interviews/edit/<%= interview._id %>" method="POST">
+            <!-- Existing fields -->
+            <div class="mb-3">
+                <label for="company" class="form-label">Company:</label>
+                <input type="text" class="form-control" id="company" name="company" value="<%= interview.company %>"
+                    required>
+            </div>
+            <div class="mb-3">
+                <label for="date" class="form-label">Date:</label>
+                <input type="date" class="form-control" id="date" name="date" value="<%= interview.date%>" required>
+            </div>
+            <div class="mb-3">
+                <label for="time" class="form-label">Time:</label>
+                <input type="time" class="form-control" id="time" name="time"
+                    value="<%= interview.time %>"
+                    required>
+            </div>
+
+
+
+            <!-- <%= interview.date %> -->
+            <div class="mb-3">
+                <label for="status" class="form-label">Status:</label>
+                <select class="form-select" id="status" name="status" required>
+                    <option value="scheduled" <%=interview.status==='scheduled' ? 'selected' : '' %>
+                        >Scheduled
+                    </option>
+                    <option value="completed" <%=interview.status==='completed' ? 'selected' : '' %>
+                        >Completed
+                    </option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label for="students" class="form-label">Students:</label>
+                <select class="form-select selectpicker" id="students" name="students" multiple data-live-search="true"
+                    required>
+                    <!-- Loop through the array of students and generate options -->
+                   <% students.forEach(student => { %>
+    <option value="<%= student._id %>" <%= students.includes(student._id) ? 'selected' : '' %>>
+        <%= student.name %>
+    </option>
+<% }) %>
+
+                </select>
+            </div>
+
+
+
+
+            <!-- Add other fields as necessary -->
+
+            <button type="submit" class="btn btn-primary">Update Interview</button>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,57 @@
+<div class="row">
+    <div class="col-10">
+        <h2>Interview Applicants for <%= interview.company %>
+        </h2>
+    </div>
+    <div class="col-2">
+        <h1 onclick="location.href='/interviews/edit/<%= interview._id %>'" class="btn btn-success m-3">Add More Student</h1>
+    </div>
+</div>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Student Name</th>
+            <th>Student college</th>
+            <th>Student batch</th>
+            <th>Student Status</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% students.forEach(student=> { %>
+            <tr>
+                <td>
+                    <%= student.name %>
+                </td>
+                <td>
+                    <%= student.college %>
+                </td>
+                <td>
+                    <%= student.batch %>
+                </td>
+                <td>
+                    <form action="/interviews/<%= interview._id %>/applicants/update" method="POST">
+                        <input type="hidden" name="studentId" value="<%= student._id %>">
+                        <div class="mb-3">
+                            <select class="form-select" name="newStatus" required>
+                                <option value="not placed" <% if (student.interviews.length> 0) { %> <%=
+                                        student.interviews[0].status==='not placed' ? 'selected' : '' %>
+                                        <% } %> >not placed</option>
+                                <option value="placed" <% if (student.interviews.length> 0) { %> <%=
+                                        student.interviews[0].status==='placed' ? 'selected' : '' %>
+                                        <% } %> >placed</option>
+                            </select>
+                        </div>
+                </td>
+                <td>
+
+                    <button type="submit" class="btn btn-primary">Update Status</button>
+                    </form>
+
+                </td>
+            </tr>
+            <% }) %>
+    </tbody>
+</table>

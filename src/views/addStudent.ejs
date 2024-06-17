@@ -1,0 +1,39 @@
+<div class="row">
+    <div class="col-md-6 offset-md-3">
+        <h2>Add New Student</h2>
+        <form action="/students/add" method="POST">
+            <div class="mb-3">
+                <label for="name" class="form-label">Name:</label>
+                <input type="text" class="form-control" id="name" name="name" required>
+            </div>
+            <div class="mb-3">
+                <label for="college" class="form-label">College:</label>
+                <input type="text" class="form-control" id="college" name="college" required>
+            </div>
+            <div class="mb-3">
+                <label for="batch" class="form-label">Batch:</label>
+                <input type="text" class="form-control" id="batch" name="batch">
+            </div>
+            <div class="mb-3">
+                <label for="status" class="form-label">Status:</label>
+                <select class="form-select" id="status" name="status">
+                    <option value="placed">Placed</option>
+                    <option value="not_placed">Not Placed</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="dsaScore" class="form-label">DSA Score:</label>
+                <input type="number" class="form-control" id="dsaScore" name="dsaScore">
+            </div>
+            <div class="mb-3">
+                <label for="webDScore" class="form-label">Web Development Score:</label>
+                <input type="number" class="form-control" id="webDScore" name="webDScore">
+            </div>
+            <div class="mb-3">
+                <label for="reactScore" class="form-label">React Score:</label>
+                <input type="number" class="form-control" id="reactScore" name="reactScore">
+            </div>
+            <button type="submit" class="btn btn-primary">Add Student</button>
+        </form>
+    </div>
+</div>
